@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<skin>
+    <information>
+        <name>해학</name>
+        <version>1.0.0</version>
+        <description>포토폴리오 페이지로 사용할 수 있는 스킨입니다.</description>
+        <license>MIT License</license>
+        <page>https://skilblog.n-e.kr</page>
+        <author>
+            <name>이장호</name>
+            <email>jho951@example.com</email>
+            <page>https://skilblog.n-e.kr</page>
+        </author>
+    </information>
+
+    <setting>
+        <defaultView>expanded</defaultView>
+    </setting>
+
+    <extra_files>
+        <file>skin.html</file>
+        <file>style.css</file>
+        <file>head.html</file>
+        <file>images/sys-core.js</file>
+        <file>images/ad-guard.js</file>
+        <file>images/blog-ui.js</file>
+        <file>images/article-utils.js</file>
+        <file>images/home-craft.js</file>
+        <file>images/theme.js</file>
+    </extra_files>
+
+    <variables>
+        <variable>
+            <name>viewType</name>
+            <label><![CDATA[ 글 목록 스타일 ]]></label>
+            <type>select</type>
+            <default>list</default>
+            <options>
+                <option value="list"><![CDATA[ 리스트형 ]]></option>
+                <option value="card"><![CDATA[ 카드형 ]]></option>
+            </options>
+        </variable>
+
+        <variable>
+            <name>pointColor</name>
+            <label><![CDATA[ 포인트 컬러 ]]></label>
+            <type>color</type>
+            <default>#333333</default>
+        </variable>
+
+        <variable>
+            <name>showSidebar</name>
+            <label><![CDATA[ 사이드바 노출 ]]></label>
+            <type>bool</type>
+            <default>true</default>
+        </variable>
+    </variables>
+</skin>
