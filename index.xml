@@ -27,6 +27,34 @@
         <file>images/article-utils.js</file>
         <file>images/home-craft.js</file>
         <file>images/theme.js</file>
+        <file>images/icon-github.svg</file>
+        <file>images/icon-discord.svg</file>
+        <file>images/icon-email.svg</file>
+        <file>images/icon-rss.svg</file>
+        <file>images/icon-medal.svg</file>
+        <file>images/icon-award.svg</file>
+        <file>images/icon-trophy.svg</file>
+        <file>images/icon-microphone.svg</file>
+        <file>images/icon-search.svg</file>
+        <file>images/icon-comment.svg</file>
+        <file>images/cat-hero-cs.svg</file>
+        <file>images/cat-hero-dev.svg</file>
+        <file>images/cat-hero-eng.svg</file>
+        <file>images/cat-hero-ts.svg</file>
+        <file>images/cat-sub-network.svg</file>
+        <file>images/cat-sub-os.svg</file>
+        <file>images/cat-sub-algo.svg</file>
+        <file>images/cat-sub-ds.svg</file>
+        <file>images/cat-sub-lang.svg</file>
+        <file>images/cat-sub-framework.svg</file>
+        <file>images/cat-sub-infra.svg</file>
+        <file>images/cat-sub-db.svg</file>
+        <file>images/cat-sub-tool.svg</file>
+        <file>images/cat-sub-dp.svg</file>
+        <file>images/cat-sub-test.svg</file>
+        <file>images/cat-sub-retro.svg</file>
+        <file>images/cat-sub-perf.svg</file>
+        <file>images/default-tech-blog-cover.png</file>
     </extra_files>
 
     <variables>

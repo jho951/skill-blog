@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="Engineering category illustration">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#101727"/>
+      <stop offset=".5" stop-color="#15334b"/>
+      <stop offset="1" stop-color="#846818"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#030b14" flood-opacity=".32"/>
+    </filter>
+  </defs>
+  <rect width="640" height="360" fill="url(#bg)"/>
+  <rect width="304" height="360" fill="#0a1020" opacity=".78"/>
+  <g opacity=".12" fill="none" stroke="#ffffff">
+    <path d="M28 306c96-38 172-38 260 0s164 38 324 0"/>
+    <path d="M28 56c112 24 192 24 294 0s178-24 290 0"/>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="356" y="70" width="92" height="74" rx="20" fill="#f8fbff"/>
+    <rect x="496" y="70" width="92" height="74" rx="20" fill="#f8fbff"/>
+    <rect x="426" y="212" width="92" height="74" rx="20" fill="#f8fbff"/>
+    <path d="M448 107h48M402 144l70 68M542 144l-70 68" fill="none" stroke="#10b3aa" stroke-width="10" stroke-linecap="round"/>
+    <g fill="#0b5f5a">
+      <rect x="382" y="94" width="40" height="10" rx="5"/>
+      <rect x="382" y="113" width="30" height="10" rx="5"/>
+      <rect x="522" y="94" width="40" height="10" rx="5"/>
+      <rect x="522" y="113" width="30" height="10" rx="5"/>
+      <rect x="452" y="236" width="40" height="10" rx="5"/>
+      <rect x="452" y="255" width="30" height="10" rx="5"/>
+    </g>
+  </g>
+  <g fill="none" stroke="#f8c15c" stroke-width="6" stroke-linecap="round" opacity=".9">
+    <path d="M80 252h86M80 278h136M80 304h104"/>
+  </g>
+</svg>

@@ -539,6 +539,12 @@ body#tt-body-index .ttPageList {
     display: none;
 }
 
+.comment-count :is(svg, img) {
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+}
+
 .card-meta {
     margin-top: auto;
     display: flex;
@@ -1295,15 +1301,15 @@ body#tt-body-index .ttPageList {
     transition: background 0.3s ease;
 }
 
-.card-icon svg {
+.card-icon :is(svg, img) {
     width: var(--news-icon-inner);
     height: var(--news-icon-inner);
-    fill: currentColor;
+    display: block;
+    object-fit: contain;
 }
 
-.card-icon .fa-discord,
-.card-icon .fa-envelope {
-    font-size: var(--news-icon-font);
+.card-icon svg {
+    fill: currentColor;
 }
 
 .news-card.github {
@@ -1332,7 +1338,7 @@ body#tt-body-index .ttPageList {
 }
 
 .news-card.discord .card-icon {
-    color: #a3a3a3;
+    color: #5865f2;
 }
 
 .news-card.mail .card-icon {
@@ -1534,9 +1540,14 @@ body#tt-body-index .ttPageList {
             color 0.2s ease;
 }
 
-.footer-social svg {
+.footer-social :is(svg, img) {
     width: var(--footer-social-icon);
     height: var(--footer-social-icon);
+    display: block;
+    object-fit: contain;
+}
+
+.footer-social svg {
     fill: currentColor;
 }
 
@@ -1920,6 +1931,16 @@ body#tt-body-index .ttPageList {
             transform 0.18s ease,
             background-color 0.18s ease,
             box-shadow 0.18s ease;
+}
+
+#pageList .list-search-toggle :is(svg, img) {
+    width: 1em;
+    height: 1em;
+    display: block;
+}
+
+#pageList .list-search-toggle svg {
+    fill: currentColor;
 }
 
 #pageList .list-search-toggle:hover {
@@ -6850,8 +6871,15 @@ body#tt-body-index.theme-craft #homeAwards .award-item__icon::after {
     z-index: -1;
 }
 
-body#tt-body-index.theme-craft #homeAwards .award-item__icon i {
-    font-size: var(--fs-19);
+body#tt-body-index.theme-craft #homeAwards .award-item__icon :is(svg, img) {
+    width: var(--fs-19);
+    height: var(--fs-19);
+    display: block;
+    object-fit: contain;
+}
+
+body#tt-body-index.theme-craft #homeAwards .award-item__icon svg {
+    fill: currentColor;
 }
 
 body#tt-body-index.theme-craft #homeAwards .award-item__body {
@@ -8708,11 +8736,6 @@ body#tt-body-index.theme-craft
     .footer-desc {
         font-size: var(--fs-16);
     }
-    .footer-social .fa-discord,
-    .footer-social .fa-envelope,
-    .footer-social .fa-rss {
-        font-size: var(--fs-20);
-    }
     #pageArticle .page-wrap {
         --rule-step: 34px;
         --nb-band-1: 40px;
@@ -9936,5 +9959,189 @@ body#tt-body-index.theme-craft
     }
     body#tt-body-index.theme-craft #homeGuestbookPreview .craft-card-note--ten {
         --craft-card-left: 37%;
+    }
+}
+
+/* =========================================================
+   Mobile Category Heroes: Match Desktop Image Cards
+========================================================= */
+
+@media (max-width: 767px) {
+    body#tt-body-index.theme-craft #pageHome .catHub--mobile .catHubGroup,
+    body#tt-body-index.theme-craft
+    #homeCategoryHub
+    .catHubGroup.catHubGroup--cs.home-motion-unit {
+        width: min(100%, calc(100vw - (var(--home-fullbleed-pad-inline, 16px) * 2)));
+        max-width: min(
+                var(--home-fullbleed-content-max),
+                calc(100vw - (var(--home-fullbleed-pad-inline, 16px) * 2))
+        );
+        margin-inline: auto;
+        padding: 0 !important;
+        border: 0 !important;
+        border-radius: clamp(24px, 7vw, 34px);
+        background: transparent !important;
+        box-shadow: none !important;
+        overflow: visible !important;
+    }
+
+    body#tt-body-index.theme-craft #pageHome .catHub--mobile .catHero,
+    body#tt-body-index.theme-craft
+    #homeCategoryHub
+    .catHubGroup.catHubGroup--cs.home-motion-unit
+    .catHero {
+        position: relative !important;
+        display: block !important;
+        min-height: clamp(272px, 76vw, 380px) !important;
+        height: auto !important;
+        border-radius: clamp(24px, 7vw, 34px) !important;
+        border: 0 !important;
+        background: transparent !important;
+        box-shadow:
+                0 24px 52px rgba(7, 18, 42, 0.14),
+                0 8px 20px var(--slate-a08) !important;
+        overflow: hidden !important;
+        isolation: isolate;
+    }
+
+    body#tt-body-index.theme-craft #pageHome .catHub--mobile .catHero::before,
+    body#tt-body-index.theme-craft
+    #homeCategoryHub
+    .catHubGroup.catHubGroup--cs.home-motion-unit
+    .catHero::before {
+        content: '' !important;
+        position: absolute !important;
+        inset: 0 !important;
+        background-image:
+                linear-gradient(
+                        90deg,
+                        rgba(0, 0, 0, 0.72) 0%,
+                        rgba(0, 0, 0, 0.42) 54%,
+                        var(--black-a18) 82%,
+                        var(--black-a10) 100%
+                ),
+                var(--hero-bg) !important;
+        background-size: cover !important;
+        background-position: center center !important;
+        transform: none !important;
+        filter: none !important;
+        opacity: 1 !important;
+        z-index: -1;
+    }
+
+    body#tt-body-index.theme-craft #pageHome .catHub--mobile .catHeroInner {
+        display: grid !important;
+        align-content: start !important;
+        align-items: start !important;
+        justify-items: start !important;
+        gap: 10px !important;
+        width: min(100%, 36ch);
+        max-width: min(100%, 36ch) !important;
+        min-height: inherit;
+        padding: 24px 24px 22px !important;
+        color: var(--white-solid) !important;
+        text-align: left !important;
+        background: transparent !important;
+        border: 0 !important;
+        box-shadow: none !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+    }
+
+    body#tt-body-index.theme-craft #pageHome .catHub--mobile .catHeroTitle,
+    body#tt-body-index.theme-craft #pageHome .catHub--mobile .catHeroDesc {
+        max-width: 100% !important;
+    }
+
+    body#tt-body-index.theme-craft
+    #homeCategoryHub
+    .catHubGroup.catHubGroup--cs.home-motion-unit
+    .catHero:is(:hover, :focus-visible) {
+        box-shadow:
+                0 30px 58px rgba(7, 18, 42, 0.18),
+                0 12px 24px rgba(15, 23, 42, 0.1) !important;
+    }
+}
+
+/* =========================================================
+   Desktop Category Stack: Zigzag Image Cards
+========================================================= */
+
+@media (min-width: 1025px) {
+    body#tt-body-index.theme-craft #pageHome .catStack {
+        display: grid !important;
+        grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+        gap: clamp(24px, 3vw, 42px) !important;
+        align-items: stretch;
+    }
+
+    body#tt-body-index.theme-craft #pageHome .catStackItem,
+    body#tt-body-index.theme-craft #pageHome .catStackItem--cs,
+    body#tt-body-index.theme-craft #pageHome .catStackItem--dev,
+    body#tt-body-index.theme-craft #pageHome .catStackItem--eng,
+    body#tt-body-index.theme-craft #pageHome .catStackItem--ts {
+        grid-column: auto !important;
+        grid-row: auto !important;
+        width: 100%;
+        min-height: clamp(300px, 27vw, 420px) !important;
+        padding: 0 !important;
+        border-radius: clamp(26px, 2.6vw, 34px) !important;
+        overflow: hidden !important;
+    }
+
+    body#tt-body-index.theme-craft #pageHome .catStackItem--cs,
+    body#tt-body-index.theme-craft #pageHome .catStackItem--eng {
+        grid-column: 1 / span 8 !important;
+    }
+
+    body#tt-body-index.theme-craft #pageHome .catStackItem--dev,
+    body#tt-body-index.theme-craft #pageHome .catStackItem--ts {
+        grid-column: 5 / -1 !important;
+    }
+
+    body#tt-body-index.theme-craft #pageHome .catStackHero,
+    body#tt-body-index.theme-craft #pageHome .catStackItem--cs .catStackHero,
+    body#tt-body-index.theme-craft #pageHome .catStackItem--dev .catStackHero,
+    body#tt-body-index.theme-craft #pageHome .catStackItem--eng .catStackHero,
+    body#tt-body-index.theme-craft #pageHome .catStackItem--ts .catStackHero {
+        min-height: clamp(300px, 27vw, 420px) !important;
+        height: 100% !important;
+        border-radius: inherit !important;
+    }
+
+    body#tt-body-index.theme-craft #pageHome .catStackHero .catHeroInner {
+        position: relative;
+        z-index: 1;
+        min-height: inherit;
+        height: 100%;
+    }
+
+    body#tt-body-index.theme-craft #pageHome .catStackItem--cs .catHeroInner,
+    body#tt-body-index.theme-craft #pageHome .catStackItem--eng .catHeroInner {
+        margin-right: auto;
+        margin-left: 0;
+        text-align: left !important;
+        justify-items: start !important;
+    }
+
+    body#tt-body-index.theme-craft #pageHome .catStackItem--dev .catHeroInner,
+    body#tt-body-index.theme-craft #pageHome .catStackItem--ts .catHeroInner {
+        margin-left: auto;
+        margin-right: 0;
+        text-align: right !important;
+        justify-items: end !important;
+    }
+
+    body#tt-body-index.theme-craft #pageHome .catStackItem--dev .catStackHero::before,
+    body#tt-body-index.theme-craft #pageHome .catStackItem--ts .catStackHero::before {
+        background-image:
+                linear-gradient(
+                        270deg,
+                        rgba(0, 0, 0, 0.72) 0%,
+                        rgba(0, 0, 0, 0.42) 54%,
+                        var(--black-a18) 82%,
+                        var(--black-a10) 100%
+                ),
+                var(--hero-bg) !important;
     }
 }

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="Computer science category illustration">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#071722"/>
+      <stop offset=".54" stop-color="#0b3350"/>
+      <stop offset="1" stop-color="#0aa39a"/>
+    </linearGradient>
+    <radialGradient id="glow" cx=".76" cy=".36" r=".62">
+      <stop offset="0" stop-color="#7dd3fc" stop-opacity=".72"/>
+      <stop offset=".55" stop-color="#0aa39a" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#071722" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#02111a" flood-opacity=".28"/>
+    </filter>
+  </defs>
+  <rect width="640" height="360" fill="url(#bg)"/>
+  <rect width="308" height="360" fill="#06111b" opacity=".78"/>
+  <path d="M0 0h640v360H0z" fill="url(#glow)"/>
+  <g opacity=".13" stroke="#e6fffb">
+    <path d="M36 52h568M36 108h568M36 164h568M36 220h568M36 276h568"/>
+    <path d="M80 18v324M160 18v324M240 18v324M320 18v324M400 18v324M480 18v324M560 18v324"/>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="342" y="66" width="206" height="218" rx="30" fill="#f8fbff" opacity=".96"/>
+    <rect x="368" y="92" width="154" height="24" rx="12" fill="#dff8f5"/>
+    <g fill="none" stroke="#0b5f5a" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M430 148h-45v58h45"/>
+      <path d="M460 148h45v58h-45"/>
+      <path d="M430 177h30"/>
+      <path d="M445 116v32M445 206v34M388 177h-32M532 177h-32"/>
+    </g>
+    <g fill="#10b3aa">
+      <circle cx="445" cy="116" r="12"/>
+      <circle cx="445" cy="240" r="12"/>
+      <circle cx="356" cy="177" r="12"/>
+      <circle cx="532" cy="177" r="12"/>
+      <circle cx="445" cy="177" r="16"/>
+    </g>
+  </g>
+  <g fill="#ffffff" opacity=".28">
+    <circle cx="118" cy="262" r="3"/>
+    <circle cx="196" cy="74" r="4"/>
+    <circle cx="276" cy="206" r="3"/>
+  </g>
+</svg>
