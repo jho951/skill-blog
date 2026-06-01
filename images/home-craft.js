@@ -6,6 +6,16 @@
 
     function normalizePath(pathname) { return (pathname || '/').replace(/\/+$/, '').toLowerCase(); }
 
+    function parseCssPx(value, fallback) {
+        var parsed = parseFloat(value);
+        return Number.isFinite(parsed) ? parsed : fallback;
+    }
+
+    function getHomeAnchorOffset() {
+        var styles = window.getComputedStyle ? window.getComputedStyle(document.body) : null;
+        return styles ? parseCssPx(styles.getPropertyValue('--home-screen-anchor-offset'), 60) : 60;
+    }
+
     // 1. 홈 히어로 배너 내부 해시 링크 인터랙티브 스무스 스크롤 바인딩
     function initHomeHeaderLanding() {
         var body = document.body, links = typeof ns.qsa === 'function' ? ns.qsa('#homeHero.home-landing-deck a[href*="#"]') : Array.prototype.slice.call(document.querySelectorAll('#homeHero.home-landing-deck a[href*="#"]'));
@@ -22,7 +32,14 @@
                 e.preventDefault();
 
                 if (typeof window.scrollTo === 'function') {
-                    window.scrollTo({ top: target.getBoundingClientRect().top + (window.pageYOffset || window.scrollY) - 60, behavior: 'smooth' });
+                    window.scrollTo({
+                        top: Math.max(
+                            0,
+                            target.getBoundingClientRect().top + (window.pageYOffset || window.scrollY) -
+                            getHomeAnchorOffset()
+                        ),
+                        behavior: 'smooth'
+                    });
                 }
                 if (window.history && typeof window.history.replaceState === 'function') window.history.replaceState(null, '', url.hash);
             });

@@ -5,10 +5,6 @@
 =============================== -->
 <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
-
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0" />
-
     <title>[##_page_title_##]</title>
     <meta name="title" content="[##_page_title_##] :: [##_title_##]" />
     <meta name="language" content="ko" />
@@ -16,6 +12,8 @@
     <meta name="keywords" content="개발, IT, 해학, 기술 블로그" />
     <meta name="author" content="이장호" />
     <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0" />
     <meta name="googlebot" content="index,follow" />
 
     <meta property="og:locale" content="ko_KR" />
@@ -129,6 +127,7 @@
                         <a class="menu-footer-sublink" href="[##_blog_link_##]pages/troubleshooting"
                         >TroubleShooting</a
                         >
+                        <a class="menu-footer-sublink" href="https://skilblog.n-e.kr/guestbook">Guestbook</a>
                     </div>
                 </div>
 
@@ -310,7 +309,7 @@
                 =============================== -->
                 <div class="home-section-divider" aria-hidden="true"></div>
                 <section class="about-highlight-section" id="homeAbout" aria-label="About Jangho Lee">
-                    <aside class="section-intro section-intro--about project-showcase__head">
+                    <aside class="section-intro section-intro--about project-showcase__head right">
                         <h2 class="section-intro__title">About</h2>
                         <p class="news-desc">성능과 운영 안정성을 함께 끌어올립니다.</p>
                     </aside>
@@ -395,7 +394,7 @@
         =============================== -->
                 <div class="home-section-divider" aria-hidden="true"></div>
                 <section class="latest latest--pagesNav" id="ttLatestFeed">
-                    <aside class="section-intro section-intro--awards">
+                    <aside class="section-intro section-intro--awards right">
                         <h2 class="section-intro__title">Tech Write</h2>
                     </aside>
                     <div class="latest-viewport" id="ttLatestViewport" aria-label="최근 글 자동 마키">
@@ -422,9 +421,6 @@
                         id="homeCategoryHub"
                         aria-label="Categories (mobile/tablet stacked)"
                 >
-                    <aside class="section-intro">
-                        <h2 class="section-intro__title">Tech Category</h2>
-                    </aside>
                     <div class="catHubStage">
                         <div class="catHubFlow">
                             <article class="catHubGroup catHubGroup--cs">
@@ -583,11 +579,7 @@
                     </div>
                 </section>
 
-                <div class="home-section-divider" aria-hidden="true"></div>
                 <section class="catStack" id="homeCategoryStack" aria-label="Categories (root list)">
-                    <aside class="section-intro section-intro--awards">
-                        <h2 class="section-intro__title">Tech Category</h2>
-                    </aside>
                     <article class="catStackItem catStackItem--cs">
                         <a
                                 class="catStackHero catStackHero--cs"
@@ -642,59 +634,6 @@
                                 <p class="catHeroDesc">Retrospective · Performance</p>
                             </div>
                         </a>
-                    </article>
-                </section>
-                <!-- ===============================
-                     Random
-        =============================== -->
-                <section class="rp4" id="homeExplore" aria-label="카테고리 랜덤 이동">
-                    <aside class="section-intro">
-                        <h2 class="section-intro__title">Just do IT</h2>
-                        <p class="section-intro__desc"></p>
-                    </aside>
-                    <article
-                            class="rp4-card"
-                            role="button"
-                            tabindex="0"
-                            data-cat="ComputerScience"
-                            data-rss="/category/computerscience/rss"
-                            data-list="/category/computerscience"
-                    >
-                        <div class="rp4-icon rp4-icon--blue" aria-hidden="true">CS</div>
-                        <h3 class="rp4-title blue">ComputerScience</h3>
-                    </article>
-                    <article
-                            class="rp4-card"
-                            role="button"
-                            tabindex="0"
-                            data-cat="Development"
-                            data-rss="/category/development/rss"
-                            data-list="/category/development"
-                    >
-                        <div class="rp4-icon rp4-icon--gray" aria-hidden="true">DV</div>
-                        <h3 class="rp4-title gray">Development</h3>
-                    </article>
-                    <article
-                            class="rp4-card"
-                            role="button"
-                            tabindex="0"
-                            data-cat="Engineering"
-                            data-rss="/category/engineering/rss"
-                            data-list="/category/engineering"
-                    >
-                        <div class="rp4-icon rp4-icon--black" aria-hidden="true">EN</div>
-                        <h3 class="rp4-title black">Engineering</h3>
-                    </article>
-                    <article
-                            class="rp4-card"
-                            role="button"
-                            tabindex="0"
-                            data-cat="Trouble Shooting"
-                            data-rss="/category/troubleshooting/rss"
-                            data-list="/category/troubleshooting"
-                    >
-                        <div class="rp4-icon rp4-icon--green" aria-hidden="true">TS</div>
-                        <h3 class="rp4-title green">Trouble Shooting</h3>
                     </article>
                 </section>
                 <div class="home-section-divider" aria-hidden="true"></div>
@@ -861,7 +800,6 @@
                     </div>
 
                     <div class="craft-info">
-                        <span class="label">GUESTBOOK</span>
                         <h2>첫 마음부터<br />함께 나누는 온기</h2>
                         <a href="/guestbook" class="btn secondary craft-btn">방명록 작성하러 가기</a>
                     </div>
@@ -872,8 +810,8 @@
                 <div class="home-section-divider" aria-hidden="true"></div>
                 <section class="news-section" id="homeContact">
                     <div class="news-container">
-                        <h2 class="news-title">Contact Us</h2>
-                        <p class="news-desc">함께 커뮤니티를 만들고 싶다면 문의하세요.</p>
+                        <h2 class="section-intro__title center">Contact Us</h2>
+                        <p class="news-desc center">함께 커뮤니티를 만들고 싶다면 문의하세요.</p>
                         <div class="news-cards">
                             <a
                                     class="news-card github"
@@ -949,7 +887,6 @@
                             </div>
                         </div>
                         <div class="subscribePromo__copy">
-                            <p class="subscribePromo__label">SUBSCRIBE</p>
                             <h2 class="subscribePromo__headline">
                                 최신소식을 <br />
                                 편하게 만나보세요.

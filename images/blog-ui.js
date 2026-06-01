@@ -125,46 +125,7 @@
         });
     }
 
-    // 5. RSS 데이터 파싱 기반 카테고리 무작위 탐색 (Random Post Box)
-    function initRandomPostBox() {
-        var cache = {};
-        var cards = typeof ns.qsa === 'function' ? ns.qsa('.rp4-card[data-rss][data-list]') : Array.prototype.slice.call(document.querySelectorAll('.rp4-card[data-rss][data-list]'));
-        if (!cards.length) return;
-
-        function parseFeed(text) {
-            if (!window.DOMParser) return [];
-            var parser = new window.DOMParser(), xml = parser.parseFromString(text, 'text/xml');
-            return Array.prototype.map.call(xml.querySelectorAll('item > link'), function (node) { return (node.textContent || '').trim(); }).filter(Boolean);
-        }
-
-        function activate(card) {
-            if (card.getAttribute('aria-busy') === 'true') return;
-            var rssUrl = card.getAttribute('data-rss'), fallbackUrl = card.getAttribute('data-list');
-            card.setAttribute('aria-busy', 'true');
-
-            if (cache[rssUrl]) {
-                var links = cache[rssUrl];
-                window.location.href = links.length ? links[Math.floor(Math.random() * links.length)] : fallbackUrl;
-                return;
-            }
-
-            if (!window.fetch) { window.location.href = fallbackUrl; return; }
-            window.fetch(rssUrl, { credentials: 'same-origin' })
-                .then(function (res) { if (!res.ok) throw new Error(); return res.text(); })
-                .then(function (text) {
-                    var links = parseFeed(text); cache[rssUrl] = links;
-                    window.location.href = links.length ? links[Math.floor(Math.random() * links.length)] : fallbackUrl;
-                })
-                .catch(function () { window.location.href = fallbackUrl; });
-        }
-
-        cards.forEach(function (card) {
-            card.addEventListener('click', function () { activate(card); });
-            card.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(card); } });
-        });
-    }
-
-    // 6. 상단 유틸리티 레이어 토글
+    // 5. 상단 유틸리티 레이어 토글
     function initHeaderPanel() {
         var header = document.getElementById('capsuleHeader'), toggle = document.getElementById('ttHeaderToggle'), panel = document.getElementById('ttHeaderPanel'), backdrop = document.getElementById('ttHeaderBackdrop');
         if (!header || !toggle || !panel) return;
@@ -181,7 +142,7 @@
 
     if (typeof ns.ready === 'function') {
         ns.ready(function () {
-            initListViewToggle(); initLatestViewport(); initListSearch(); initListCategoryTabs(); initRandomPostBox(); initHeaderPanel();
+            initListViewToggle(); initLatestViewport(); initListSearch(); initListCategoryTabs(); initHeaderPanel();
         });
     }
 })(window, document);
