@@ -4401,6 +4401,10 @@ body#tt-body-index #ttHomeLanding {
     margin-top: 12px;
 }
 
+#homeContact .news-desc {
+    margin-bottom: clamp(24px, 4vw, 48px);
+}
+
 .news-card {
     width: 100%;
     display: flex;
@@ -6053,11 +6057,8 @@ body#tt-body-index.theme-craft #pageHome > #homeProjects::after {
 }
 
 body#tt-body-index.theme-craft #homeProjects .project-showcase__inner {
-    width: min(var(--home-projects-content-max), calc(100vw - (var(--home-projects-pad-inline) * 2)));
-    max-width: min(
-            var(--home-projects-content-max),
-            calc(100vw - (var(--home-projects-pad-inline) * 2))
-    );
+    width: 100%;
+    max-width: var(--home-projects-content-max);
     margin-left: auto;
     margin-right: auto;
     position: relative;
@@ -9049,8 +9050,8 @@ body#tt-body-index.theme-craft
         margin-top: 34px;
     }
     body#tt-body-index.theme-craft #homeProjects .project-showcase__inner {
-        width: min(1180px, calc(100vw - (var(--home-projects-pad-inline) * 2)));
-        max-width: min(1180px, calc(100vw - (var(--home-projects-pad-inline) * 2)));
+        width: 100%;
+        max-width: 1180px;
     }
     body#tt-body-index.theme-craft #homeProjects .project-showcase__grid {
         display: grid;
@@ -9602,22 +9603,30 @@ body#tt-body-index.theme-craft
 ========================================================= */
 
 @media (max-width: 767px) {
+    body#tt-body-index.theme-craft #homeProjects .project-showcase__inner {
+        width: 100%;
+        max-width: 100%;
+        margin-inline: auto;
+    }
+
     body#tt-body-index.theme-craft #homeProjects .project-showcase__grid {
-        --project-mobile-card-shift: clamp(16px, 5.2vw, 24px);
+        --project-mobile-card-shift: 0px;
+        width: 100%;
         align-items: center;
+        justify-content: center;
     }
 
     body#tt-body-index.theme-craft #homeProjects .project-card {
-        margin-left: auto;
-        margin-right: auto;
+        width: min(392px, 100%);
+        margin-inline: auto;
     }
 
     body#tt-body-index.theme-craft #homeProjects .project-card:nth-child(odd) {
-        --project-card-x: calc(var(--project-mobile-card-shift) * -1);
+        --project-card-x: 0px;
     }
 
     body#tt-body-index.theme-craft #homeProjects .project-card:nth-child(even) {
-        --project-card-x: var(--project-mobile-card-shift);
+        --project-card-x: 0px;
     }
 
     body#tt-body-index.theme-craft #homeAbout .about-highlight-card__metrics {
@@ -9688,7 +9697,7 @@ body#tt-body-index.theme-craft
     .catHero {
         position: relative !important;
         display: block !important;
-        min-height: clamp(272px, 76vw, 380px) !important;
+        min-height: clamp(212px, 58vw, 280px) !important;
         height: auto !important;
         border-radius: clamp(24px, 7vw, 34px) !important;
         border: 0 !important;
@@ -9735,7 +9744,7 @@ body#tt-body-index.theme-craft
         width: min(100%, 36ch);
         max-width: min(100%, 36ch) !important;
         min-height: inherit;
-        padding: 24px 24px 22px !important;
+        padding: 20px 20px 18px !important;
         color: var(--white-solid) !important;
         text-align: left !important;
         background: transparent !important;
