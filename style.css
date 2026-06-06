@@ -1339,6 +1339,20 @@ body#tt-body-index .ttPageList {
     display: none;
 }
 
+#pageArticle .article-back-button {
+    display: none;
+}
+
+@media (hover: hover) {
+    #pageArticle .article-back-button:hover {
+        transform: translateY(-1px);
+        background: rgba(255, 255, 255, 0.94);
+        box-shadow:
+                0 18px 32px rgba(18, 41, 39, 0.12),
+                inset 0 1px 0 var(--white-a96);
+    }
+}
+
 #pageArticle .article-side-title {
     display: block;
     margin: 0 0 10px;
@@ -8957,6 +8971,41 @@ body#tt-body-index.theme-craft
         display: block;
         position: sticky;
         top: calc(var(--header-h) + var(--header-top) + 20px);
+    }
+    #pageArticle .article-back-button {
+        position: fixed;
+        top: calc(var(--header-top) + 8px);
+        right: max(18px, env(safe-area-inset-right));
+        z-index: var(--z-page-back);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        border: 1px solid rgba(19, 46, 43, 0.12);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.86);
+        box-shadow:
+                0 14px 28px rgba(18, 41, 39, 0.1),
+                inset 0 1px 0 var(--white-a92);
+        color: #173a37;
+        cursor: pointer;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        transition:
+                transform 0.16s ease,
+                box-shadow 0.16s ease,
+                background-color 0.16s ease;
+    }
+    #pageArticle .article-back-button__icon {
+        width: 22px;
+        height: 22px;
+        fill: currentColor;
+        pointer-events: none;
+    }
+    #pageArticle .article-back-button:focus-visible {
+        outline: 3px solid rgba(31, 162, 139, 0.32);
+        outline-offset: 3px;
     }
     #pageArticle .article-comment-form-slot .tt-area-write {
         min-height: 300px;

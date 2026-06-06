@@ -67,7 +67,21 @@
         syncPlacement();
     }
 
+    function initArticleBackButton() {
+        var button = document.getElementById('ttArticleBackButton');
+        if (!button) return;
+
+        button.addEventListener('click', function () {
+            var fallbackUrl = button.getAttribute('data-fallback-url') || '/';
+            if (window.history && window.history.length > 1) {
+                window.history.back();
+                return;
+            }
+            window.location.href = fallbackUrl;
+        });
+    }
+
     if (typeof ns.ready === 'function') {
-        ns.ready(function () { initArticleToc(); initCommentDock(); });
+        ns.ready(function () { initArticleToc(); initCommentDock(); initArticleBackButton(); });
     }
 })(window, document);
