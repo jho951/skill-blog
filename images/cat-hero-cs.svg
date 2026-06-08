@@ -1,46 +1,54 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="Computer science category illustration">
   <defs>
-    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0" stop-color="#071722"/>
-      <stop offset=".54" stop-color="#0b3350"/>
-      <stop offset="1" stop-color="#0aa39a"/>
+    <linearGradient id="paperBg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#fbf5df"/>
+      <stop offset=".58" stop-color="#f4e3a8"/>
+      <stop offset="1" stop-color="#e1f1ee"/>
     </linearGradient>
-    <radialGradient id="glow" cx=".76" cy=".36" r=".62">
-      <stop offset="0" stop-color="#7dd3fc" stop-opacity=".72"/>
-      <stop offset=".55" stop-color="#0aa39a" stop-opacity=".22"/>
-      <stop offset="1" stop-color="#071722" stop-opacity="0"/>
-    </radialGradient>
-    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#02111a" flood-opacity=".28"/>
+    <linearGradient id="note" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#fff7b8"/>
+      <stop offset="1" stop-color="#efd86f"/>
+    </linearGradient>
+    <linearGradient id="fold" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#fffbd3"/>
+      <stop offset="1" stop-color="#d8b64a"/>
+    </linearGradient>
+    <filter id="shadow" x="-18%" y="-18%" width="136%" height="144%">
+      <feDropShadow dx="0" dy="18" stdDeviation="14" flood-color="#5b4616" flood-opacity=".22"/>
+    </filter>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="9" flood-color="#5b4616" flood-opacity=".14"/>
     </filter>
   </defs>
-  <rect width="640" height="360" fill="url(#bg)"/>
-  <rect width="308" height="360" fill="#06111b" opacity=".78"/>
-  <path d="M0 0h640v360H0z" fill="url(#glow)"/>
-  <g opacity=".13" stroke="#e6fffb">
-    <path d="M36 52h568M36 108h568M36 164h568M36 220h568M36 276h568"/>
-    <path d="M80 18v324M160 18v324M240 18v324M320 18v324M400 18v324M480 18v324M560 18v324"/>
+  <rect width="640" height="360" fill="url(#paperBg)"/>
+  <g opacity=".32" stroke="#c9b782" stroke-width="1">
+    <path d="M0 60h640M0 106h640M0 152h640M0 198h640M0 244h640M0 290h640"/>
+    <path d="M70 0v360M140 0v360M210 0v360M280 0v360M350 0v360M420 0v360M490 0v360M560 0v360"/>
   </g>
-  <g filter="url(#shadow)">
-    <rect x="342" y="66" width="206" height="218" rx="30" fill="#f8fbff" opacity=".96"/>
-    <rect x="368" y="92" width="154" height="24" rx="12" fill="#dff8f5"/>
-    <g fill="none" stroke="#0b5f5a" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M430 148h-45v58h45"/>
-      <path d="M460 148h45v58h-45"/>
-      <path d="M430 177h30"/>
-      <path d="M445 116v32M445 206v34M388 177h-32M532 177h-32"/>
-    </g>
-    <g fill="#10b3aa">
-      <circle cx="445" cy="116" r="12"/>
-      <circle cx="445" cy="240" r="12"/>
-      <circle cx="356" cy="177" r="12"/>
-      <circle cx="532" cy="177" r="12"/>
-      <circle cx="445" cy="177" r="16"/>
-    </g>
+  <g opacity=".44" filter="url(#softShadow)">
+    <rect x="64" y="70" width="154" height="108" rx="16" fill="#dff3ec" transform="rotate(-5 141 124)"/>
+    <rect x="92" y="214" width="158" height="82" rx="16" fill="#fff0a4" transform="rotate(5 171 255)"/>
   </g>
-  <g fill="#ffffff" opacity=".28">
-    <circle cx="118" cy="262" r="3"/>
-    <circle cx="196" cy="74" r="4"/>
-    <circle cx="276" cy="206" r="3"/>
+  <g filter="url(#shadow)" transform="rotate(-2 450 176)">
+    <rect x="330" y="54" width="236" height="244" rx="24" fill="url(#note)" stroke="#c7a744" stroke-width="2"/>
+    <path d="M538 54h28v28Z" fill="url(#fold)"/>
+    <path d="M364 122h168M364 166h168M364 210h134" stroke="#8b752a" stroke-width="3" opacity=".22" stroke-linecap="round"/>
+    <g fill="none" stroke="#225a54" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M448 118v48M448 214v46M400 188h-48M544 188h-48"/>
+      <path d="M430 158h-44v60h44M466 158h44v60h-44M430 188h36"/>
+    </g>
+    <g fill="#2b67c6">
+      <circle cx="448" cy="118" r="13"/>
+      <circle cx="448" cy="260" r="13"/>
+      <circle cx="352" cy="188" r="13"/>
+      <circle cx="544" cy="188" r="13"/>
+      <circle cx="448" cy="188" r="18"/>
+    </g>
+    <rect x="350" y="80" width="192" height="30" rx="12" fill="#ffffff" opacity=".52"/>
+    <text x="446" y="103" text-anchor="middle" fill="#1d2d4f" font-family="'Nanum Pen Script', 'Apple Chancery', cursive" font-size="25" font-weight="400">Computer Science</text>
+  </g>
+  <g transform="translate(418 34) rotate(4)" filter="url(#softShadow)">
+    <rect x="0" y="0" width="92" height="26" rx="8" fill="#e8eef7" opacity=".92"/>
+    <path d="M14 13h64" stroke="#94a3b8" stroke-width="3" stroke-linecap="round"/>
   </g>
 </svg>

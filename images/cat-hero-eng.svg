@@ -1,35 +1,64 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="Engineering category illustration">
   <defs>
-    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0" stop-color="#101727"/>
-      <stop offset=".5" stop-color="#15334b"/>
-      <stop offset="1" stop-color="#846818"/>
+    <linearGradient id="paperBg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#fbf5df"/>
+      <stop offset=".56" stop-color="#f6e7b2"/>
+      <stop offset="1" stop-color="#e9f0e6"/>
     </linearGradient>
-    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#030b14" flood-opacity=".32"/>
+    <linearGradient id="note" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#fff5a8"/>
+      <stop offset="1" stop-color="#ead069"/>
+    </linearGradient>
+    <linearGradient id="fold" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#fffbd0"/>
+      <stop offset="1" stop-color="#d6b345"/>
+    </linearGradient>
+    <filter id="shadow" x="-18%" y="-18%" width="136%" height="144%">
+      <feDropShadow dx="0" dy="18" stdDeviation="14" flood-color="#5b4616" flood-opacity=".22"/>
+    </filter>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="9" flood-color="#5b4616" flood-opacity=".14"/>
     </filter>
   </defs>
-  <rect width="640" height="360" fill="url(#bg)"/>
-  <rect width="304" height="360" fill="#0a1020" opacity=".78"/>
-  <g opacity=".12" fill="none" stroke="#ffffff">
-    <path d="M28 306c96-38 172-38 260 0s164 38 324 0"/>
-    <path d="M28 56c112 24 192 24 294 0s178-24 290 0"/>
+  <rect width="640" height="360" fill="url(#paperBg)"/>
+  <g opacity=".32" stroke="#c9b782" stroke-width="1">
+    <path d="M0 62h640M0 108h640M0 154h640M0 200h640M0 246h640M0 292h640"/>
+    <path d="M74 0v360M148 0v360M222 0v360M296 0v360M370 0v360M444 0v360M518 0v360M592 0v360"/>
   </g>
-  <g filter="url(#shadow)">
-    <rect x="356" y="70" width="92" height="74" rx="20" fill="#f8fbff"/>
-    <rect x="496" y="70" width="92" height="74" rx="20" fill="#f8fbff"/>
-    <rect x="426" y="212" width="92" height="74" rx="20" fill="#f8fbff"/>
-    <path d="M448 107h48M402 144l70 68M542 144l-70 68" fill="none" stroke="#10b3aa" stroke-width="10" stroke-linecap="round"/>
-    <g fill="#0b5f5a">
-      <rect x="382" y="94" width="40" height="10" rx="5"/>
-      <rect x="382" y="113" width="30" height="10" rx="5"/>
-      <rect x="522" y="94" width="40" height="10" rx="5"/>
-      <rect x="522" y="113" width="30" height="10" rx="5"/>
-      <rect x="452" y="236" width="40" height="10" rx="5"/>
-      <rect x="452" y="255" width="30" height="10" rx="5"/>
+  <g opacity=".42" filter="url(#softShadow)">
+    <rect x="58" y="66" width="160" height="110" rx="16" fill="#fff0a4" transform="rotate(-6 138 121)"/>
+    <rect x="98" y="216" width="166" height="84" rx="16" fill="#dff3ec" transform="rotate(4 181 258)"/>
+  </g>
+  <g filter="url(#shadow)" transform="rotate(2.5 450 176)">
+    <rect x="328" y="54" width="238" height="244" rx="24" fill="url(#note)" stroke="#c7a744" stroke-width="2"/>
+    <path d="M538 54h28v28Z" fill="url(#fold)"/>
+    <path d="M364 122h168M364 166h168M364 210h134" stroke="#8b752a" stroke-width="3" opacity=".22" stroke-linecap="round"/>
+    <rect x="356" y="66" width="180" height="28" rx="12" fill="#ffffff" opacity=".52"/>
+    <text x="446" y="88" text-anchor="middle" fill="#1d2d4f" font-family="'Nanum Pen Script', 'Apple Chancery', cursive" font-size="28" font-weight="400">Engineering</text>
+    <g fill="#ffffff" opacity=".62">
+      <rect x="376" y="98" width="60" height="48" rx="14"/>
+      <rect x="474" y="98" width="60" height="48" rx="14"/>
+      <rect x="424" y="214" width="60" height="48" rx="14"/>
+    </g>
+    <g fill="none" stroke="#225a54" stroke-width="8" stroke-linecap="round">
+      <path d="M436 122h38"/>
+      <path d="M406 146l48 68"/>
+      <path d="M504 146l-48 68"/>
+    </g>
+    <g fill="#2b67c6">
+      <rect x="392" y="114" width="28" height="8" rx="4"/>
+      <rect x="392" y="130" width="20" height="8" rx="4"/>
+      <rect x="490" y="114" width="28" height="8" rx="4"/>
+      <rect x="490" y="130" width="20" height="8" rx="4"/>
+      <rect x="440" y="230" width="28" height="8" rx="4"/>
+      <rect x="440" y="246" width="20" height="8" rx="4"/>
     </g>
   </g>
-  <g fill="none" stroke="#f8c15c" stroke-width="6" stroke-linecap="round" opacity=".9">
-    <path d="M80 252h86M80 278h136M80 304h104"/>
+  <g fill="none" stroke="#225a54" stroke-width="6" stroke-linecap="round" opacity=".7">
+    <path d="M82 254h82M82 280h126M82 306h98"/>
+  </g>
+  <g transform="translate(416 34) rotate(-3)" filter="url(#softShadow)">
+    <rect x="0" y="0" width="94" height="26" rx="8" fill="#e8eef7" opacity=".92"/>
+    <path d="M14 13h66" stroke="#94a3b8" stroke-width="3" stroke-linecap="round"/>
   </g>
 </svg>

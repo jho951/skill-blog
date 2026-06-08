@@ -51,6 +51,12 @@
             }
         }
     </script>
+    <script src="https://t1.daumcdn.net/tistory_admin/lib/jquery/jquery-1.12.4.min.js"></script>
+    <script>
+        if (window.jQuery && typeof window.$ !== 'function') {
+            window.$ = window.jQuery;
+        }
+    </script>
     <script src="./images/sys-core.js" defer></script>
     <script src="./images/ad-guard.js" defer></script>
     <script src="./images/blog-ui.js" defer></script>
@@ -210,7 +216,7 @@
                 <!-- ==============================
                         Project Showcase
                 =============================== -->
-                <div class="home-section-divider" aria-hidden="true"></div>
+                <hr class="home-section-divider" aria-hidden="true" />
                 <section class="project-showcase" id="homeProjects" aria-label="프로젝트 쇼케이스">
                     <div class="project-showcase__inner">
                         <aside class="section-intro section-intro--about project-showcase__head">
@@ -310,7 +316,7 @@
                 <!-- ==============================
                         About Highlight
                 =============================== -->
-                <div class="home-section-divider" aria-hidden="true"></div>
+                <hr class="home-section-divider" aria-hidden="true" />
                 <section class="about-highlight-section" id="homeAbout" aria-label="About Jangho Lee">
                     <aside class="section-intro section-intro--about project-showcase__head right">
                         <h2 class="section-intro__title">About</h2>
@@ -344,7 +350,7 @@
                 <!-- ==============================
                             Awards
                 =============================== -->
-                <div class="home-section-divider" aria-hidden="true"></div>
+                <hr class="home-section-divider" aria-hidden="true" />
                 <section class="awards-section" id="homeAwards" aria-label="Awards">
                     <aside class="section-intro section-intro--awards">
                         <h2 class="section-intro__title">Activties_</h2>
@@ -395,7 +401,7 @@
                 <!-- ==============================
                   Latest Feed
         =============================== -->
-                <div class="home-section-divider" aria-hidden="true"></div>
+                <hr class="home-section-divider" aria-hidden="true" />
                 <section class="latest latest--pagesNav" id="ttLatestFeed">
                     <aside class="section-intro section-intro--awards right">
                         <h2 class="section-intro__title">Tech Write</h2>
@@ -639,7 +645,7 @@
                         </a>
                     </article>
                 </section>
-                <div class="home-section-divider" aria-hidden="true"></div>
+                <hr class="home-section-divider" aria-hidden="true" />
                 <!-- ===============================
                       Craft
         =============================== -->
@@ -678,11 +684,12 @@
                         <div class="craft-card craft-card-note craft-card-note--one" aria-hidden="true">
                             <div class="craft-card-header">
                                 <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-                                <span class="craft-card-title">Warm Note</span>
+                                <span class="craft-card-title">해학 블로그</span>
                             </div>
                             <div class="craft-card-content">
                                 <p class="craft-note-text">
-                                    오늘도 충분히 잘하고 있어요. 이곳에 남긴 마음이 오래 따뜻하게 남기를 바랍니다.
+                                    '해학' 블로그 잘 보고 갑니다! 우연히 들렀는데 글이 너무 깔끔하네요. 앞으로도 좋은
+                                    백엔드 포스팅 기대할게요! 화이팅!
                                 </p>
                             </div>
                         </div>
@@ -690,11 +697,12 @@
                         <div class="craft-card craft-card-note craft-card-note--two" aria-hidden="true">
                             <div class="craft-card-header">
                                 <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-                                <span class="craft-card-title">Tiny Log</span>
+                                <span class="craft-card-title">JPA 해결</span>
                             </div>
                             <div class="craft-card-content">
                                 <p class="craft-note-text">
-                                    짧은 한 줄도 오래 남습니다. 지나가듯 남긴 인사도 누군가에겐 큰 위로가 됩니다.
+                                    JPA 벌크 연산 캐시 문제로 고생하다가 덕분에 5분 만에 해결하고 갑니다ㅠㅠ
+                                    트러블슈팅 기록 진짜 최고예요!
                                 </p>
                             </div>
                         </div>
@@ -702,12 +710,12 @@
                         <div class="craft-card craft-card-note craft-card-note--three" aria-hidden="true">
                             <div class="craft-card-header">
                                 <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-                                <span class="craft-card-title">Hello</span>
+                                <span class="craft-card-title">문제 해결 루틴</span>
                             </div>
                             <div class="craft-card-content">
                                 <p class="craft-note-text">
-                                    잠시 들른 오늘의 마음을 남겨보세요. 짧은 안부도 이 공간을 더 다정하게
-                                    만듭니다.
+                                    비전공자이신데도 가설 세워서 문제 해결하시는 과학적 루틴이 정말 멋집니다. 저도 많이
+                                    자극받고 갑니다. 응원할게요!
                                 </p>
                             </div>
                         </div>
@@ -715,12 +723,12 @@
                         <div class="craft-card craft-card-note craft-card-note--four" aria-hidden="true">
                             <div class="craft-card-header">
                                 <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-                                <span class="craft-card-title">Cheer Up</span>
+                                <span class="craft-card-title">백준 DP</span>
                             </div>
                             <div class="craft-card-content">
                                 <p class="craft-note-text">
-                                    응원은 생각보다 멀리 갑니다. 오늘 남긴 다정한 문장이 다음 사람에게도 닿을
-                                    거예요.
+                                    백준 DP 문제 해설 찾다가 왔어요. 코드가 너무 깔끔해서 이해가 쏙쏙 되네요! 코테
+                                    준비에 큰 도움 받았습니다.
                                 </p>
                             </div>
                         </div>
@@ -728,11 +736,12 @@
                         <div class="craft-card craft-card-note craft-card-note--five" aria-hidden="true">
                             <div class="craft-card-header">
                                 <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-                                <span class="craft-card-title">Thanks</span>
+                                <span class="craft-card-title">인프라 모듈</span>
                             </div>
                             <div class="craft-card-content">
                                 <p class="craft-note-text">
-                                    읽어주셔서 고마워요. 머문 시간을 짧게라도 남겨주시면 더 오래 기억하겠습니다.
+                                    직접 만드신 인프라 모듈들 깃허브에서 보고 구경 왔어요! 인증 모듈 아키텍처 고민하신
+                                    흔적이 돋보입니다. 최고!
                                 </p>
                             </div>
                         </div>
@@ -740,11 +749,12 @@
                         <div class="craft-card craft-card-note craft-card-note--six" aria-hidden="true">
                             <div class="craft-card-header">
                                 <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-                                <span class="craft-card-title">Together</span>
+                                <span class="craft-card-title">다자바 히트맵</span>
                             </div>
                             <div class="craft-card-content">
                                 <p class="craft-note-text">
-                                    한 줄의 온기를 환영합니다. 조용한 응원도 이 방명록에서는 충분히 큰 목소리예요.
+                                    다자바 프로젝트 히트맵 시각화 글 흥미롭게 읽었습니다! UX 병목 현상 분석 아이디어가
+                                    정말 좋네요. 자주 올게요!
                                 </p>
                             </div>
                         </div>
@@ -752,12 +762,12 @@
                         <div class="craft-card craft-card-note craft-card-note--seven" aria-hidden="true">
                             <div class="craft-card-header">
                                 <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-                                <span class="craft-card-title">Bright Ping</span>
+                                <span class="craft-card-title">CRDT 동기화</span>
                             </div>
                             <div class="craft-card-content">
                                 <p class="craft-note-text">
-                                    좋은 마음은 의외로 오래 남아요. 오늘의 작은 인사도 내일의 기분을 바꿀 수
-                                    있습니다.
+                                    블록 기반 에디터 CRDT 동기화 글 잘 봤습니다. 관련 한글 자료가 적어서 막막했는데
+                                    사막의 오아시스 같네요!
                                 </p>
                             </div>
                         </div>
@@ -765,12 +775,12 @@
                         <div class="craft-card craft-card-note craft-card-note--eight" aria-hidden="true">
                             <div class="craft-card-header">
                                 <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-                                <span class="craft-card-title">Kind Line</span>
+                                <span class="craft-card-title">MSA & DDD</span>
                             </div>
                             <div class="craft-card-content">
                                 <p class="craft-note-text">
-                                    다정한 말 한 줄이면 충분합니다. 부담 없이 남긴 문장이 이곳의 분위기를
-                                    바꿔줍니다.
+                                    MSA랑 도메인 주도 설계(DDD) 아키텍처 글 너무 유익해요. 실무에 바로 적용해보고
+                                    싶을 정도로 정리가 잘 됐네요!
                                 </p>
                             </div>
                         </div>
@@ -778,12 +788,12 @@
                         <div class="craft-card craft-card-note craft-card-note--nine" aria-hidden="true">
                             <div class="craft-card-header">
                                 <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-                                <span class="craft-card-title">Small Wish</span>
+                                <span class="craft-card-title">Security 흐름</span>
                             </div>
                             <div class="craft-card-content">
                                 <p class="craft-note-text">
-                                    오늘의 안부를 가볍게 남겨주세요. 평범한 하루의 기록도 충분히 반갑고
-                                    소중합니다.
+                                    Spring Security 필터 흐름 정리 글 보고 인증 구조가 훨씬 선명해졌어요. 실습하면서
+                                    다시 참고하겠습니다!
                                 </p>
                             </div>
                         </div>
@@ -791,12 +801,51 @@
                         <div class="craft-card craft-card-note craft-card-note--ten" aria-hidden="true">
                             <div class="craft-card-header">
                                 <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-                                <span class="craft-card-title">Soft Wave</span>
+                                <span class="craft-card-title">운영 로그</span>
                             </div>
                             <div class="craft-card-content">
                                 <p class="craft-note-text">
-                                    따뜻한 파동이 다음 사람에게 전해집니다. 남겨주신 한마디가 이 공간의 결을 더
-                                    부드럽게 만듭니다.
+                                    장애 로그를 따라가며 원인 좁혀가는 과정이 인상적이었어요. 실무 트러블슈팅 감각
+                                    배우고 갑니다.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="craft-card craft-card-note craft-card-note--eleven" aria-hidden="true">
+                            <div class="craft-card-header">
+                                <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                                <span class="craft-card-title">테스트 코드</span>
+                            </div>
+                            <div class="craft-card-content">
+                                <p class="craft-note-text">
+                                    테스트 코드 작성 기준을 설명해주셔서 리팩터링할 때 큰 도움이 됐습니다. 예제도
+                                    깔끔해서 좋았어요.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="craft-card craft-card-note craft-card-note--twelve" aria-hidden="true">
+                            <div class="craft-card-header">
+                                <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                                <span class="craft-card-title">성능 개선</span>
+                            </div>
+                            <div class="craft-card-content">
+                                <p class="craft-note-text">
+                                    쿼리 성능 개선 글 덕분에 실행 계획을 보는 관점이 생겼어요. 다음 글도
+                                    기대하겠습니다!
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="craft-card craft-card-note craft-card-note--thirteen" aria-hidden="true">
+                            <div class="craft-card-header">
+                                <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                                <span class="craft-card-title">꾸준한 기록</span>
+                            </div>
+                            <div class="craft-card-content">
+                                <p class="craft-note-text">
+                                    꾸준히 기록하시는 모습이 멋집니다. 개발하면서 막힐 때마다 다시 찾아오게 되는
+                                    블로그예요.
                                 </p>
                             </div>
                         </div>
@@ -810,7 +859,7 @@
                 <!-- ===============================
                        News
         =============================== -->
-                <div class="home-section-divider" aria-hidden="true"></div>
+                <hr class="home-section-divider" aria-hidden="true" />
                 <section class="news-section" id="homeContact">
                     <div class="news-container">
                         <h2 class="section-intro__title center">Contact Us</h2>
@@ -859,7 +908,7 @@
                 <!-- ===============================
                       Cta
         =============================== -->
-                <div class="home-section-divider" aria-hidden="true"></div>
+                <hr class="home-section-divider" aria-hidden="true" />
                 <section class="subscribePromo" id="ttSubscribePromo">
                     <div class="subscribePromo__inner">
                         <div class="subscribePromo__mock" aria-hidden="true">

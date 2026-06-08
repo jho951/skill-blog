@@ -256,6 +256,10 @@
         return String(Math.round(value)) + (suffix || '');
     }
 
+    function getMetricProgress(target) {
+        return Math.max(0, Math.min(target, 100)) / 100;
+    }
+
     function animateMetric(valueNode) {
         var parent = valueNode.closest ? valueNode.closest('.about-metric') : valueNode.parentNode;
         var target = Number(valueNode.getAttribute('data-count-to'));
@@ -270,6 +274,9 @@
         valueNode.dataset.countReady = 'true';
 
         if (parent && parent.classList) {
+            if (parent.style && typeof parent.style.setProperty === 'function') {
+                parent.style.setProperty('--about-metric-progress-scale', getMetricProgress(target));
+            }
             parent.classList.add('is-counting');
         }
 
