@@ -6089,6 +6089,9 @@ body#tt-body-index.theme-craft #homeAbout .about-metric.is-counting .about-metri
 body#tt-body-index.theme-craft #ttLatestFeed > .section-intro {
     width: min(var(--home-fullbleed-content-max),100%);
     max-width: min(var(--home-fullbleed-content-max),100%);
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 body.theme-craft :is(#ttLatestFeed .latest-slide, #pageList .list-card) {
@@ -8071,7 +8074,7 @@ body#tt-body-index.theme-craft #homeGuestbookPreview .craft-card-note--thirteen 
         --home-screen-min-h: auto;
         --home-screen-anchor-offset: 0px;
         --home-content-pad-inline: clamp(26px,4vw,42px);
-        --home-landing-hero-padding: var(--ui-home-landing-hero-padding);
+        --home-landing-hero-padding: clamp(64px,7vh,88px) 0 clamp(34px,5vh,52px);
         --home-landing-hero-radius: 0 0 42px 42px;
         --home-landing-inner-align: start;
         --home-landing-inner-gap: var(--ui-home-landing-inner-gap);
@@ -8085,7 +8088,7 @@ body#tt-body-index.theme-craft #homeGuestbookPreview .craft-card-note--thirteen 
         --home-landing-link-width: var(--home-landing-link-column-width);
         --home-landing-link-min-width: 0;
         --home-landing-link-max-width: var(--home-landing-link-column-width);
-        --home-landing-link-min-height: clamp(154px,13vw,172px);
+        --home-landing-link-min-height: clamp(138px,11vw,156px);
         --home-landing-link-gap: var(--space-5);
         --home-landing-link-padding: 22px 78px 22px 24px;
         --home-landing-link-radius: 28px;
@@ -8099,8 +8102,24 @@ body#tt-body-index.theme-craft #homeGuestbookPreview .craft-card-note--thirteen 
         --home-landing-link-desc-size: var(--fs-16);
     }
 
-    body#tt-body-index.theme-craft #pageHome > :is( #homeProjects, #homeAbout, #homeAwards, #homeCategoryStack, #homeGuestbookPreview, #homeContact ) {
+    body#tt-body-index.theme-craft #pageHome > #homeHero.home-landing-deck {
+        min-height: min(760px,calc(100svh - var(--header-h) - var(--header-top) - 24px));
+        padding-left: max(clamp(28px,4vw,56px),env(safe-area-inset-left));
+        padding-right: max(clamp(28px,4vw,56px),env(safe-area-inset-right));
+        box-sizing: border-box;
+    }
+
+    body#tt-body-index.theme-craft #pageHome > :is( #homeProjects, #homeAbout, #homeAwards, #ttLatestFeed, #homeCategoryStack, #homeGuestbookPreview, #homeContact, #ttSubscribePromo ) {
         min-height: 100dvh;
+    }
+
+    body#tt-body-index.theme-craft #pageHome > :is( #homeProjects, #homeAbout, #homeAwards, #ttLatestFeed, #ttSubscribePromo ) {
+        display: grid;
+        align-content: center;
+    }
+
+    body#tt-body-index.theme-craft #pageHome > #homeGuestbookPreview {
+        align-content: center;
     }
 
     :root {
@@ -8566,6 +8585,7 @@ body#tt-body-index.theme-craft #homeGuestbookPreview .craft-card-note--thirteen 
     body#tt-body-index.theme-craft #pageHome > #homeCategoryStack {
         display: flex;
         flex-direction: column;
+        justify-content: center;
     }
 
     body.theme-craft {
