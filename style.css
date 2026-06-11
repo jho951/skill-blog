@@ -8075,6 +8075,7 @@ body#tt-body-index.theme-craft #homeGuestbookPreview .craft-card-note--thirteen 
         --home-screen-anchor-offset: 0px;
         --home-content-pad-inline: clamp(26px,4vw,42px);
         --home-landing-hero-padding: clamp(64px,7vh,88px) 0 clamp(34px,5vh,52px);
+        --home-landing-hero-inline-pad: clamp(28px,4vw,56px);
         --home-landing-hero-radius: 0 0 42px 42px;
         --home-landing-inner-align: start;
         --home-landing-inner-gap: var(--ui-home-landing-inner-gap);
@@ -8103,9 +8104,13 @@ body#tt-body-index.theme-craft #homeGuestbookPreview .craft-card-note--thirteen 
     }
 
     body#tt-body-index.theme-craft #pageHome > #homeHero.home-landing-deck {
+        width: min(var(--home-fullbleed-content-max),calc(100vw - var(--home-landing-hero-inline-pad) - var(--home-landing-hero-inline-pad)));
+        max-width: min(var(--home-fullbleed-content-max),calc(100vw - var(--home-landing-hero-inline-pad) - var(--home-landing-hero-inline-pad)));
         min-height: min(760px,calc(100svh - var(--header-h) - var(--header-top) - 24px));
-        padding-left: max(clamp(28px,4vw,56px),env(safe-area-inset-left));
-        padding-right: max(clamp(28px,4vw,56px),env(safe-area-inset-right));
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: max(var(--home-landing-hero-inline-pad),env(safe-area-inset-left));
+        padding-right: max(var(--home-landing-hero-inline-pad),env(safe-area-inset-right));
         box-sizing: border-box;
     }
 
@@ -8780,8 +8785,17 @@ html.js-enabled body#tt-body-index.theme-craft .home-motion-unit.section-intro.c
 
 @media (max-width: 1024px) {
     body#tt-body-index.theme-craft {
-        --home-screen-anchor-offset: calc(var(--header-h)+var(--header-top)+env(safe-area-inset-top)+clamp(56px,10vw,96px));
-        --home-projects-first-padding-top: calc(var(--header-h)+var(--header-top)+env(safe-area-inset-top)+clamp(120px,20vw,200px));
+        --home-screen-anchor-offset: calc(var(--header-h)+var(--header-top)+env(safe-area-inset-top)+clamp(76px,13vw,124px));
+        --home-projects-first-padding-top: calc(var(--header-h)+var(--header-top)+env(safe-area-inset-top)+clamp(160px,24vw,248px));
+    }
+
+    body#tt-body-index.theme-craft #homeCategoryHub .catHubGroup.catHubGroup--cs.home-motion-unit .catHero {
+        background: var(--hero-bg) center center / cover no-repeat,transparent;
+        box-shadow: var(--category-hub-cat-hero-shadow);
+    }
+
+    body#tt-body-index.theme-craft #homeCategoryHub .catHubGroup.catHubGroup--cs.home-motion-unit .catHero:is(:hover, :focus-visible) {
+        box-shadow: var(--category-hub-cat-hero-hover-focus-shadow);
     }
 }
 
