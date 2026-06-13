@@ -4782,7 +4782,8 @@ body#tt-body-index.theme-craft #pageHome > #homeHero.home-landing-deck::after {
 }
 
 body#tt-body-index.theme-craft .home-landing-deck__inner {
-    width: min(calc(var(--home-content-max)+(var(--home-content-pad-inline) * 2)),100%);
+    width: 100%;
+    max-width: calc(var(--home-content-max) + (var(--home-content-pad-inline) * 2));
     margin: 0 auto;
     padding-left: max(var(--home-content-pad-inline),env(safe-area-inset-left));
     padding-right: max(var(--home-content-pad-inline),env(safe-area-inset-right));
@@ -8104,11 +8105,11 @@ body#tt-body-index.theme-craft #homeGuestbookPreview .craft-card-note--thirteen 
     }
 
     body#tt-body-index.theme-craft #pageHome > #homeHero.home-landing-deck {
-        width: min(var(--home-fullbleed-content-max),calc(100vw - var(--home-landing-hero-inline-pad) - var(--home-landing-hero-inline-pad)));
-        max-width: min(var(--home-fullbleed-content-max),calc(100vw - var(--home-landing-hero-inline-pad) - var(--home-landing-hero-inline-pad)));
+        width: auto;
+        max-width: none;
         min-height: min(760px,calc(100svh - var(--header-h) - var(--header-top) - 24px));
-        margin-left: auto;
-        margin-right: auto;
+        margin-left: var(--fullbleed-viewport-offset);
+        margin-right: var(--fullbleed-viewport-offset);
         padding-left: max(var(--home-landing-hero-inline-pad),env(safe-area-inset-left));
         padding-right: max(var(--home-landing-hero-inline-pad),env(safe-area-inset-right));
         box-sizing: border-box;
@@ -8178,7 +8179,7 @@ body#tt-body-index.theme-craft #homeGuestbookPreview .craft-card-note--thirteen 
     #pageArticle .article-back-button {
         position: fixed;
         top: calc(var(--header-top)+8px);
-        right: max(18px,env(safe-area-inset-right));
+        left: max(18px,env(safe-area-inset-left));
         z-index: var(--z-page-back);
         display: inline-flex;
         align-items: center;
