@@ -102,7 +102,7 @@
                 <span class="home-btn__sub">Backend notes, tasks, and operating stories</span>
               </span>
                 </a>
-                <nav class="gnb-btn" aria-label="Header actions">
+                <div class="gnb-btn">
                     <button
                             type="button"
                             class="btn ghost"
@@ -118,11 +118,11 @@
                             <use href="#icon-close" xlink:href="#icon-close"></use>
                         </svg>
                     </button>
-                </nav>
+                </div>
             </div>
-            <div class="header-expand-content" id="ttHeaderPanel" aria-hidden="true">
-                <div class="header-gnb" aria-label="확장 내비게이션">
-                    <div class="menu-footer" aria-label="주요 메뉴">
+            <div class="header-expand-content" id="ttHeaderPanel" aria-hidden="true" hidden>
+                <nav class="header-gnb" aria-label="주요 메뉴">
+                    <div class="menu-footer">
                         <a class="menu-footer-sublink" href="[##_blog_link_##]pages/about">About</a>
                         <a class="menu-footer-sublink" href="[##_blog_link_##]pages/computerscience"
                         >ComputerScience</a
@@ -138,10 +138,11 @@
                         >
                         <a class="menu-footer-sublink" href="https://skilblog.n-e.kr/guestbook">Guestbook</a>
                     </div>
-                </div>
+                </nav>
 
                 <div class="header-gnb-utility">
                     <button
+                            type="button"
                             class="btn secondary full btn_subscription"
                             data-blog-id=""
                             data-url="[##_blog_link_##]"
@@ -220,7 +221,7 @@
                 <section class="project-showcase" id="homeProjects" aria-label="프로젝트 쇼케이스">
                     <div class="project-showcase__inner">
                         <aside class="section-intro section-intro--about project-showcase__head">
-                            <h2 class="section-intro__title">Portofolio</h2>
+                            <h2 class="section-intro__title">Portfolio</h2>
                             <p class="news-desc">개발자 이장호의 발자취입니다.</p>
                         </aside>
 
@@ -353,7 +354,7 @@
                 <hr class="home-section-divider" aria-hidden="true" />
                 <section class="awards-section" id="homeAwards" aria-label="Awards">
                     <aside class="section-intro section-intro--awards">
-                        <h2 class="section-intro__title">Activties_</h2>
+                        <h2 class="section-intro__title">Activities_</h2>
                         <p class="news-desc">수상과 발표로 쌓아온 활동 기록입니다.</p>
                     </aside>
                     <div class="awards-list">
@@ -984,13 +985,13 @@
                             <nav class="article-toc-nav" id="ttArticleTocNav"></nav>
                         </aside>
                         <div class="page-wrap" id="ttPageWrap">
-                            <section class="post-header">
+                            <header class="post-header">
                                 <p class="post-category">[##_article_rep_category_##]</p>
                                 <h1 class="post-title">[##_article_rep_title_##]</h1>
                                 <div class="post-meta">
                                     <span class="post-date">[##_article_rep_date_##]</span>
                                 </div>
-                            </section>
+                            </header>
                             <article class="post-content" id="ttPostContent">
                                 [##_article_rep_desc_##]
                             </article>
@@ -1032,19 +1033,21 @@
                                         type="button"
                                         class="list-search-toggle"
                                         id="ttListSearchToggle"
+                                        aria-label="검색 열기"
                                         aria-expanded="false"
                                         aria-controls="ttListSearchPanel"
                                         title="검색"
                                 >
                                     <img src="./images/icon-search.svg" alt="" />
                                 </button>
-                                <div class="list-search-panel" id="ttListSearchPanel" aria-hidden="true">
+                                <div class="list-search-panel" id="ttListSearchPanel" aria-hidden="true" hidden>
                                     <div class="list-search" id="ttListSearch">
                                         <div class="list-search-box">
                                             <input
                                                     id="ttListSearchInput"
                                                     class="list-search-input"
                                                     type="search"
+                                                    aria-label="글 제목과 카테고리 검색"
                                                     placeholder="제목/카테고리 검색"
                                                     autocomplete="off"
                                                     enterkeyhint="search"
@@ -1054,6 +1057,8 @@
                                                     class="list-search-clear"
                                                     id="ttListSearchClear"
                                                     aria-label="검색어 지우기"
+                                                    hidden
+                                                    disabled
                                             >
                                                 지우기
                                             </button>
@@ -1099,7 +1104,7 @@
                         </aside>
 
                         <section class="list-content">
-                            <section class="list-grid">
+                            <section class="list-grid" aria-label="글 목록">
                                 <s_list_rep>
                                     <article class="card list-card">
                                         <a class="card-link" href="[##_list_rep_link_##]">
@@ -1511,6 +1516,7 @@
                             class="footer-social"
                             href="[##_rss_url_##]"
                             target="_blank"
+                            rel="noopener"
                             title="RSS Feed"
                             aria-label="RSS"
                     >

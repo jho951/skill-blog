@@ -2,47 +2,16 @@
     'use strict';
 
     var ns = (window.__ttSkin = window.__ttSkin || {});
-    var slice = Array.prototype.slice;
+    var ready = ns.ready;
+    var qsa = ns.qsa;
+    var prefersReducedMotion = ns.prefersReducedMotion;
+    var setVar = ns.setStyleVar;
 
     if (ns.themeLoaded) {
         return;
     }
 
     ns.themeLoaded = true;
-
-    function ready(callback) {
-        if (typeof ns.ready === 'function') {
-            ns.ready(callback);
-            return;
-        }
-
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', callback, { once: true });
-            return;
-        }
-
-        callback();
-    }
-
-    function qsa(selector, root) {
-        if (typeof ns.qsa === 'function') {
-            return ns.qsa(selector, root);
-        }
-
-        return slice.call((root || document).querySelectorAll(selector));
-    }
-
-    function prefersReducedMotion() {
-        return !!(
-            window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches
-        );
-    }
-
-    function setVar(node, name, value) {
-        if (value !== undefined && value !== null) {
-            node.style.setProperty(name, String(value));
-        }
-    }
 
     function setMotionProfile(node, stageId, order) {
         setVar(node, '--motion-order', order);

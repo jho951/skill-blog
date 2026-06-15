@@ -4,18 +4,17 @@
     if (ns.articleUtilsLoaded) return;
     ns.articleUtilsLoaded = true;
 
-    function slugify(text) { return (text || '').toLowerCase().replace(/<[^>]+>/g, '').replace(/[^\w\u3131-\uD79D]+/g, '-').replace(/^-+|-+$/g, '') || 'section'; }
-
     // 본문 전용 자동 목차(TOC) 추적기 생성 빌더
     function initArticleToc() {
         var toc = document.getElementById('ttArticleToc'), nav = document.getElementById('ttArticleTocNav'), content = document.getElementById('ttPostContent');
+        var ticking = false;
         if (!toc || !nav || !content) return;
-        var headings = typeof ns.qsa === 'function' ? ns.qsa('h2, h3', content) : Array.prototype.slice.call(content.querySelectorAll('h2, h3'));
+        var headings = ns.qsa('h2, h3', content);
         if (!headings.length) { toc.hidden = true; return; }
 
         var usedIds = {}, links = [], fragment = document.createDocumentFragment();
         headings.forEach(function (heading) {
-            var baseId = heading.id || slugify(heading.textContent), nextId = baseId, index = 2;
+            var baseId = heading.id || ns.slugify(heading.textContent), nextId = baseId, index = 2;
             while (usedIds[nextId] || (document.getElementById(nextId) && document.getElementById(nextId) !== heading)) { nextId = baseId + '-' + index; index++; }
             usedIds[nextId] = true; heading.id = nextId;
 
@@ -33,14 +32,24 @@
             });
         }
 
+        function requestSyncActive() {
+            if (ticking) return;
+            ticking = true;
+            ns.requestFrame(function () {
+                syncActive();
+                ticking = false;
+            });
+        }
+
         nav.addEventListener('click', function (e) {
-            var target = e.target; if (!target || !target.classList.contains('article-toc-link')) return;
+            var target = e.target && e.target.closest ? e.target.closest('.article-toc-link') : e.target;
+            if (!target || !nav.contains(target)) return;
             var heading = document.getElementById(target.dataset.targetId); if (!heading) return;
             e.preventDefault();
-            if (typeof window.scrollTo === 'function') window.scrollTo({ top: (window.pageYOffset || window.scrollY) + heading.getBoundingClientRect().top - 80, behavior: 'smooth' });
+            ns.scrollToElement(heading, 80);
         });
 
-        window.addEventListener('scroll', syncActive, { passive: true });
+        window.addEventListener('scroll', requestSyncActive, { passive: true });
         syncActive();
     }
 
@@ -55,15 +64,15 @@
         container.insertBefore(anchor, replyBlock || null);
 
         function syncPlacement() {
-            var isDesktop = typeof ns.isDesktop === 'function' ? ns.isDesktop() : window.matchMedia('(min-width: 1024px)').matches;
-            if (isDesktop) {
+            if (ns.isDesktop()) {
                 if (!slot.contains(form)) slot.appendChild(form); container.classList.add('is-form-docked');
             } else {
                 if (anchor.parentNode === container) container.insertBefore(form, anchor.nextSibling);
                 container.classList.remove('is-form-docked');
             }
         }
-        if (typeof ns.listenMedia === 'function') ns.listenMedia('(min-width: 1024px)', syncPlacement);
+
+        ns.listenMedia('(min-width: 1024px)', syncPlacement);
         syncPlacement();
     }
 
@@ -81,7 +90,5 @@
         });
     }
 
-    if (typeof ns.ready === 'function') {
-        ns.ready(function () { initArticleToc(); initCommentDock(); initArticleBackButton(); });
-    }
+    ns.ready(function () { initArticleToc(); initCommentDock(); initArticleBackButton(); });
 })(window, document);

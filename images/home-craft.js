@@ -4,43 +4,27 @@
     if (ns.homeCraftLoaded) return;
     ns.homeCraftLoaded = true;
 
-    function normalizePath(pathname) { return (pathname || '/').replace(/\/+$/, '').toLowerCase(); }
-
-    function parseCssPx(value, fallback) {
-        var parsed = parseFloat(value);
-        return Number.isFinite(parsed) ? parsed : fallback;
-    }
-
     function getHomeAnchorOffset() {
         var styles = window.getComputedStyle ? window.getComputedStyle(document.body) : null;
-        return styles ? parseCssPx(styles.getPropertyValue('--home-screen-anchor-offset'), 60) : 60;
+        return styles ? ns.parseCssPx(styles.getPropertyValue('--home-screen-anchor-offset'), 60) : 60;
     }
 
     // 1. 홈 히어로 배너 내부 해시 링크 인터랙티브 스무스 스크롤 바인딩
     function initHomeHeaderLanding() {
-        var body = document.body, links = typeof ns.qsa === 'function' ? ns.qsa('#homeHero.home-landing-deck a[href*="#"]') : Array.prototype.slice.call(document.querySelectorAll('#homeHero.home-landing-deck a[href*="#"]'));
+        var body = document.body, links = ns.qsa('#homeHero.home-landing-deck a[href*="#"]');
         if (!body || body.id !== 'tt-body-index' || !links.length) return;
 
         links.forEach(function (link) {
             link.addEventListener('click', function (e) {
                 var href = link.getAttribute('href') || '', url = null, target = null;
                 try { url = new window.URL(href, window.location.href); } catch (err) { return; }
-                if (url.origin !== window.location.origin || normalizePath(url.pathname) !== normalizePath(window.location.pathname) || !url.hash) return;
+                if (url.origin !== window.location.origin || ns.normalizePath(url.pathname) !== ns.normalizePath(window.location.pathname) || !url.hash) return;
 
                 target = document.getElementById(url.hash.slice(1));
                 if (!target) return;
                 e.preventDefault();
 
-                if (typeof window.scrollTo === 'function') {
-                    window.scrollTo({
-                        top: Math.max(
-                            0,
-                            target.getBoundingClientRect().top + (window.pageYOffset || window.scrollY) -
-                            getHomeAnchorOffset()
-                        ),
-                        behavior: 'smooth'
-                    });
-                }
+                ns.scrollToElement(target, getHomeAnchorOffset());
                 if (window.history && typeof window.history.replaceState === 'function') window.history.replaceState(null, '', url.hash);
             });
         });
@@ -50,8 +34,8 @@
     function initRootCategoryPageNav() {
         var body = document.body, nav = document.getElementById('ttRootCategoryNav'), backLink = document.getElementById('ttRootCategoryBack');
         var pageBody = nav && nav.parentNode ? nav.parentNode.querySelector('.tPageBody') : null;
-        var currentPath = normalizePath(window.location.pathname), match = currentPath.match(/(?:^|\/)pages\/([^/]+)$/), pageSlug = match ? match[1] : '';
-        var groups = nav ? (typeof ns.qsa === 'function' ? ns.qsa('[data-root-category-nav]', nav) : Array.prototype.slice.call(nav.querySelectorAll('[data-root-category-nav]'))) : [];
+        var currentPath = ns.normalizePath(window.location.pathname), match = currentPath.match(/(?:^|\/)pages\/([^/]+)$/), pageSlug = match ? match[1] : '';
+        var groups = nav ? ns.qsa('[data-root-category-nav]', nav) : [];
         var activeGroup = null;
 
         if (!body || !nav || !groups.length) return;
@@ -94,9 +78,7 @@
         observer.observe(container);
     }
 
-    if (typeof ns.ready === 'function') {
-        ns.ready(function () {
-            initHomeHeaderLanding(); initRootCategoryPageNav(); initGuestbookCraftAnimation();
-        });
-    }
+    ns.ready(function () {
+        initHomeHeaderLanding(); initRootCategoryPageNav(); initGuestbookCraftAnimation();
+    });
 })(window, document);
