@@ -3,12 +3,12 @@
     <information>
         <name>해학</name>
         <version>1.0.0</version>
-        <description>포토폴리오 페이지로 사용할 수 있는 스킨입니다.</description>
+        <description>이장호의 블로그입니다.</description>
         <license>MIT License</license>
         <page>https://skilblog.n-e.kr</page>
         <author>
             <name>이장호</name>
-            <email>jho951@example.com</email>
+            <email>jho951@naver.com</email>
             <page>https://skilblog.n-e.kr</page>
         </author>
     </information>
